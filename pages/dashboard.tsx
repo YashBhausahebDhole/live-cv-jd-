@@ -530,17 +530,16 @@ export default function Dashboard() {
         throw new Error(json?.error || "Failed to evaluate the answer.");
       }
 
-      setInterviewEvaluations((prev) => ({
-        ...prev,
-        [json.evaluation.questionId]: json.evaluation,
-      }));
-    } catch (e) {
-      setInterviewError(e instanceof Error ? e.message : "Something went wrong.");
-    } finally {
-      setInterviewEvaluating(false);
-    }
-  }
+      if (!response.ok || !json?.success || !json.evaluation) {
+  throw new Error(json?.error || "Failed to evaluate the answer.");
+}
 
+const evaluation: InterviewEvaluation = json.evaluation;
+
+setInterviewEvaluations((prev: Record<string, InterviewEvaluation>) => ({
+  ...prev,
+  [evaluation.questionId]: evaluation,
+}));
   async function uploadAndAnalyze() {
     setAnalyzeErr("");
     setOkMsg("");
