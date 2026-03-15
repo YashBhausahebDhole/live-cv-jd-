@@ -540,6 +540,12 @@ setInterviewEvaluations((prev: Record<string, InterviewEvaluation>) => ({
   ...prev,
   [evaluation.questionId]: evaluation,
 }));
+    } catch (e) {
+      setInterviewError(e instanceof Error ? e.message : "Something went wrong.");
+    } finally {
+      setInterviewEvaluating(false);
+    }
+  }
   async function uploadAndAnalyze() {
     setAnalyzeErr("");
     setOkMsg("");
