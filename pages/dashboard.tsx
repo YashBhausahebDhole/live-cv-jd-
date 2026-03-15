@@ -274,7 +274,6 @@ export default function Dashboard() {
 
   const latest = history[0] ?? null;
   const latestScore = latest?.overall_score ?? null;
-  const missingCount = latest?.missing_keywords?.length ?? 0;
 
   const flaggedSections = useMemo(
     () =>
@@ -533,7 +532,7 @@ export default function Dashboard() {
 
       setInterviewEvaluations((prev) => ({
         ...prev,
-        [json.evaluation!.questionId]: json.evaluation!,
+        [json.evaluation.questionId]: json.evaluation,
       }));
     } catch (e) {
       setInterviewError(e instanceof Error ? e.message : "Something went wrong.");
@@ -591,7 +590,12 @@ export default function Dashboard() {
       }
 
       if (!analyzeResponse.ok || !hasResults(analyzeJson)) {
-        throw new Error(analyzeJson?.error || "Analyze failed");
+        const message =
+          analyzeJson && "error" in analyzeJson && typeof analyzeJson.error === "string"
+            ? analyzeJson.error
+            : "Analyze failed";
+
+        throw new Error(message);
       }
 
       const detectResponse = await fetch("/api/llm/detect-ai-sections", {
@@ -616,7 +620,12 @@ export default function Dashboard() {
       }
 
       if (!detectResponse.ok || !hasDetectSuccess(detectJson)) {
-        throw new Error(detectJson?.error || "AI section detection failed");
+        const message =
+          detectJson && "error" in detectJson && typeof detectJson.error === "string"
+            ? detectJson.error
+            : "AI section detection failed";
+
+        throw new Error(message);
       }
 
       const editable = convertToEditableBlocks(detectJson.flaggedSections);
@@ -687,7 +696,8 @@ export default function Dashboard() {
               CV + JD Optimizer
             </h1>
             <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 md:text-base">
-              Edit rewritten blocks manually, apply only the ones you want, and practice tailored interview questions from your CV and target JD.
+              Edit rewritten blocks manually, apply only the ones you want, and practice tailored
+              interview questions from your CV and target JD.
             </p>
           </div>
 
