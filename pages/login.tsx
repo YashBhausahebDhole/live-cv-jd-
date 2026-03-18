@@ -67,7 +67,7 @@ export default function Login() {
             <div className="grid gap-10 md:grid-cols-2 items-center">
               <section>
                 <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">
-                  AI CV–Job Description Matcher
+                  Welcome to Kalik, your AI-powered CV and Job Description coach.
                 </h1>
                 <p className="mt-3 text-white/70 leading-relaxed">
                   Create an account, upload your CV and Job Description, and get an ATS-focused
@@ -75,10 +75,10 @@ export default function Login() {
                 </p>
 
                 <div className="mt-6 grid grid-cols-2 gap-3 text-xs text-white/70">
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-3">Supabase Auth</div>
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-3">Local history</div>
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-3">PDF / DOCX / TXT</div>
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-3">Charts + AI tips</div>
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-3">ATS Scores</div>
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-3">Gen AI Detection</div>
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-3">Interview Prep</div>
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-3">Chart with CV + AI tips</div>
                 </div>
               </section>
 
