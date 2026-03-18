@@ -695,14 +695,13 @@ setInterviewEvaluations((prev: Record<string, InterviewEvaluation>) => ({
         <header className="mb-8 flex flex-col gap-5 rounded-[32px] border border-white/60 bg-white/55 p-6 shadow-2xl shadow-sky-200/30 backdrop-blur-2xl md:flex-row md:items-center md:justify-between">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-sky-700">
-              Phase 3 — Editable Rewrite Studio + Interview Simulator
+              Kalik 
             </div>
             <h1 className="mt-4 text-4xl font-black tracking-tight text-slate-900 md:text-5xl">
               CV + JD Optimizer
             </h1>
             <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 md:text-base">
-              Edit rewritten blocks manually, apply only the ones you want, and practice tailored
-              interview questions from your CV and target JD.
+              Upload your CV and a Job Description to get AI-powered insights, edits, and interview prep all in one place. Optimize your resume for ATS and human readers alike, and practice your interview skills with tailored questions and feedback.
             </p>
           </div>
 
