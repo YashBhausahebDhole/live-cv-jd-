@@ -732,7 +732,7 @@ setInterviewEvaluations((prev: Record<string, InterviewEvaluation>) => ({
           <Tile
             label="Improved ATS"
             value={atsAfter ? `${atsAfter}/100` : "—"}
-            sub="Live score based on applied blocks"
+            sub="Score after applying edits"
             tone="emerald"
           />
           <Tile

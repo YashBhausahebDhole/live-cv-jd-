@@ -229,7 +229,7 @@ export default function ChatbotPanel({
           />
           <div className="mt-3 flex items-center justify-between gap-3">
             <div className="text-xs text-slate-500">
-              The bot answers using your CV, JD, ATS, and flagged sections.
+              Kalik answers using your CV, JD, ATS, and flagged sections.
             </div>
             <motion.button
               whileHover={{ y: -1 }}

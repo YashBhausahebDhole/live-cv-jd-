@@ -1,5 +1,5 @@
 // pages/_app.tsx
-import "../src/styles/globals.css";
+import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
