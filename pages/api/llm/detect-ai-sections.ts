@@ -301,4 +301,4 @@ Return JSON only:
       error: error instanceof Error ? error.message : "Failed to detect AI-like sections.",
     });
   }
-}
+} 
